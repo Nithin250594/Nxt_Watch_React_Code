@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
 import ThemeContext from './context/ThemeContext'
 
@@ -87,7 +87,8 @@ class App extends Component {
             path="/videos/:id"
             component={VideoItemDetailsRoute}
           />
-          <ProtectedRoute component={NotFoundRoute} />
+          <Route exact path="/bad-path" component={NotFoundRoute} />
+          <Redirect to="bad-path"/>
         </Switch>
       </ThemeContext.Provider>
     )
