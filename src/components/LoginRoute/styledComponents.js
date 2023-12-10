@@ -22,11 +22,12 @@ export const LoginForm = styled.div`
   @media screen and (max-width: 576px) {
     width: 77%;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 577px) and (max-width: 768px) {
     width: 50%;
   }
   @media screen and (min-width: 769px) {
     width: 45%;
+    max-width: 450px;
   }
 `
 
