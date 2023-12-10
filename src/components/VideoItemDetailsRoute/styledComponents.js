@@ -68,13 +68,19 @@ export const HomeRightSection = styled.div`
   height: 100vh;
   margin-top: 0px;
   overflow-y: auto;
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
 `
 
 export const VideoItemDetailsSection = styled.div`
   background-color: ${props => (props.lightTheme ? '#f4f4f4' : '#0f0f0f')};
-  padding: 25px;
+  padding: 0px 20px 0px 20px;
   width: 100%;
   height: 130vh;
+  @media screen and (max-width: 576px) {
+    height: 60%;
+  }
 `
 
 export const VideoTitle = styled.p`
@@ -82,18 +88,27 @@ export const VideoTitle = styled.p`
   font-size: 18px;
   font-weight: 500;
   font-family: 'Roboto';
+  @media screen and (max-width: 576px) {
+    font-size: 88%;
+  }
 `
 export const VideoSubSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  @media screen and (max-width: 576px) {
+    margin-top: 0px;
+  }
 `
 export const VideoPublishedViewsSection = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 17%;
+  @media screen and (max-width: 576px) {
+    width: 37%;
+  }
 `
 export const SpanDot = styled.span`
   color: #64748b;
@@ -106,6 +121,9 @@ export const VideoViews = styled.p`
   font-size: 16px;
   font-weight: 500;
   font-family: 'Roboto';
+  @media screen and (max-width: 576px) {
+    font-size: 68%;
+  }
 `
 
 export const VideoLikeDislikeAddSection = styled.div`
@@ -128,6 +146,10 @@ export const VideoLikeLogo = styled(AiOutlineLike)`
   height: 25px;
   margin-left: 16px;
   margin-right: 5px;
+  @media screen and (max-width: 576px) {
+    width: 15px;
+    height: 15px;
+  }
 `
 export const VideoDislikeLogo = styled(AiOutlineDislike)`
   color: ${props => (props.isDisliked ? '#2563eb' : '#64748b')};
@@ -135,6 +157,10 @@ export const VideoDislikeLogo = styled(AiOutlineDislike)`
   height: 25px;
   margin-left: 16px;
   margin-right: 5px;
+  @media screen and (max-width: 576px) {
+    width: 15px;
+    height: 15px;
+  }
 `
 export const VideoSaveLogo = styled(CgPlayListAdd)`
   color: ${props => (props.saveColor ? '#2563eb' : '#64748b')};
@@ -142,24 +168,37 @@ export const VideoSaveLogo = styled(CgPlayListAdd)`
   height: 25px;
   margin-left: 16px;
   margin-right: 5px;
+  @media screen and (max-width: 576px) {
+    width: 15px;
+    height: 15px;
+  }
 `
 export const VideoLikeText = styled.p`
   color: ${props => (props.isLiked ? '#2563eb' : '#64748b')};
   font-size: 14px;
   font-weight: 600;
   font-family: 'Roboto';
+  @media screen and (max-width: 576px) {
+    font-size: 88%;
+  }
 `
 export const VideoDislikeText = styled.p`
   color: ${props => (props.isDisliked ? '#2563eb' : '#64748b')};
   font-size: 14px;
   font-weight: 600;
   font-family: 'Roboto';
+  @media screen and (max-width: 576px) {
+    font-size: 88%;
+  }
 `
 export const VideoSaveText = styled.p`
   color: ${props => (props.saveColor ? '#2563eb' : '#64748b')};
   font-size: 14px;
   font-weight: 600;
   font-family: 'Roboto';
+  @media screen and (max-width: 576px) {
+    font-size: 88%;
+  }
 `
 export const Separator = styled.hr`
   border: 1px ${props => (props.lightTheme ? '#cbd5e1' : '#616e7c')} solid;
@@ -176,6 +215,9 @@ export const VideoChannelProfileImage = styled.img`
   align-self: flex-start;
   margin-top: 10px;
   margin-right: 15px;
+  @media screen and (max-width: 576px) {
+    margin-top: 4px;
+  }
 `
 export const VideoChannelTextSection = styled.div`
   display: flex;
@@ -200,4 +242,8 @@ export const VideoDescription = styled.p`
   font-weight: ${props => (props.lightTheme ? 500 : 400)};
   font-family: 'Roboto';
   margin-top: 25px;
+  @media screen and (max-width: 576px) {
+    margin-top: 5px;
+    font-size: 88%;
+  }
 `

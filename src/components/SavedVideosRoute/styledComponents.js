@@ -25,7 +25,8 @@ export const HomeLink = styled(Link)`
   text-decoration-line: none;
   border-width: 0px;
   width: 18vw;
-  padding-left: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 `
 export const TrendingLink = styled(HomeLink)`
   background-color: transparent;

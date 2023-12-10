@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 
 import ThemeContext from './context/ThemeContext'
 
@@ -16,12 +16,33 @@ import ProtectedRoute from './components/ProtectedRoute'
 
 import './App.css'
 
+const MenuItemsList = {
+  home: 'HOME',
+  trending: 'TRENDING',
+  gaming: 'GAMING',
+  savedVideos: 'SAVED_VIDEOS',
+}
+
 // Replace your code here
 class App extends Component {
-  state = {lightTheme: true, savedVideosList: [], videoSaved: false}
+  state = {
+    lightTheme: true,
+    savedVideosList: [],
+    videoSaved: false,
+    isMenuOpen: false,
+    activeMenuItem: MenuItemsList.home,
+  }
 
   onChangeTheme = () => {
     this.setState(prev => ({lightTheme: !prev.lightTheme}))
+  }
+
+  setActiveMenuItem = value => {
+    this.setState({activeMenuItem: value})
+  }
+
+  handleToggle = () => {
+    this.setState(prev => ({isMenuOpen: !prev.isMenuOpen}))
   }
 
   onSaveVideo = video => {
@@ -60,7 +81,13 @@ class App extends Component {
   }
 
   render() {
-    const {lightTheme, savedVideosList, videoSaved} = this.state
+    const {
+      lightTheme,
+      savedVideosList,
+      videoSaved,
+      isMenuOpen,
+      activeMenuItem,
+    } = this.state
 
     return (
       <ThemeContext.Provider
@@ -70,6 +97,10 @@ class App extends Component {
           savedVideosList,
           onSaveVideo: this.onSaveVideo,
           videoSaved,
+          isMenuOpen,
+          handleToggle: this.handleToggle,
+          activeMenuItem,
+          setActiveMenuItem: this.setActiveMenuItem,
         }}
       >
         <Switch>
@@ -87,7 +118,8 @@ class App extends Component {
             path="/videos/:id"
             component={VideoItemDetailsRoute}
           />
-          <ProtectedRoute component={NotFoundRoute} />
+          <Route exact path="/bad-path" component={NotFoundRoute} />
+          <Redirect to="bad-path" />
         </Switch>
       </ThemeContext.Provider>
     )

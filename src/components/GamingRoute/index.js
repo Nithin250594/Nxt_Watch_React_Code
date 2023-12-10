@@ -10,16 +10,11 @@ import GamingVideoItem from '../GamingVideoItem'
 
 import ThemeContext from '../../context/ThemeContext'
 
+import MenuItems from '../MenuItems'
+
 import {
   HomeSection,
   HomeLeftSection,
-  NavItemUl,
-  NavItemList,
-  ContactUsSection,
-  ContactUsTitle,
-  SocialMediaLogos,
-  SocialMediaLogo,
-  ContactUsPara,
   HomeRightSection,
   LoaderContainer,
   FailureSection,
@@ -36,23 +31,7 @@ import {
   TrendingText,
 } from '../TrendingRoute/styledComponents'
 
-import {
-  GamingDiv,
-  GamingLogo,
-  GamingVideosUl,
-  HomeLink,
-  TrendingLink,
-  GamingLink,
-  SavedLink,
-  HomeIcon,
-  TrendingIcon,
-  GamingIcon,
-  SavedIcon,
-  HomeTitle,
-  TrendingTitle,
-  GamingTitle,
-  SavedTitle,
-} from './styledComponents'
+import {GamingDiv, GamingLogo, GamingVideosUl} from './styledComponents'
 
 const outputStatus = {
   initial: 'INITIAL',
@@ -186,58 +165,7 @@ class GamingRoute extends Component {
               <Header onChangeTheme={onChangeTheme} lightTheme={theme} />
               <HomeSection>
                 <HomeLeftSection>
-                  <NavItemUl>
-                    <HomeLink to="/">
-                      <NavItemList>
-                        <HomeIcon />
-                        <HomeTitle lightTheme={theme}>Home</HomeTitle>
-                      </NavItemList>
-                    </HomeLink>
-
-                    <TrendingLink to="/trending">
-                      <NavItemList>
-                        <TrendingIcon />
-                        <TrendingTitle lightTheme={theme}>
-                          Trending
-                        </TrendingTitle>
-                      </NavItemList>
-                    </TrendingLink>
-                    <GamingLink to="/gaming" lightTheme={theme}>
-                      <NavItemList>
-                        <GamingIcon />
-                        <GamingTitle lightTheme={theme}>Gaming</GamingTitle>
-                      </NavItemList>
-                    </GamingLink>
-
-                    <SavedLink to="/saved-videos">
-                      <NavItemList>
-                        <SavedIcon />
-                        <SavedTitle lightTheme={theme}>Saved videos</SavedTitle>
-                      </NavItemList>
-                    </SavedLink>
-                  </NavItemUl>
-                  <ContactUsSection>
-                    <ContactUsTitle lightTheme={theme}>
-                      CONTACT US
-                    </ContactUsTitle>
-                    <SocialMediaLogos>
-                      <SocialMediaLogo
-                        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
-                        alt="facebook logo"
-                      />
-                      <SocialMediaLogo
-                        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-twitter-logo-img.png"
-                        alt="twitter logo"
-                      />
-                      <SocialMediaLogo
-                        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png"
-                        alt="linked in logo"
-                      />
-                    </SocialMediaLogos>
-                    <ContactUsPara lightTheme={theme}>
-                      Enjoy! Now to see your channels and recommendations!
-                    </ContactUsPara>
-                  </ContactUsSection>
+                  <MenuItems />
                 </HomeLeftSection>
                 <HomeRightSection>
                   <TrendingBannerSection lightTheme={theme}>

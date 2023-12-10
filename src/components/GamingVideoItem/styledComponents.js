@@ -20,6 +20,10 @@ export const GamingVideoTextSection = styled.div`
   width: 80%;
   margin-left: 20px;
   align-self: flex-start;
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    margin-left: 0px;
+  }
 `
 export const GamingVideoTitle = styled.p`
   font-size: 16px;
@@ -28,6 +32,9 @@ export const GamingVideoTitle = styled.p`
   font-family: 'Roboto';
   line-height: 1.5;
   margin-bottom: 0px;
+  @media screen and (max-width: 576px) {
+    font-size: 88%;
+  }
 `
 
 export const GameVideoViewsText = styled.p`
@@ -36,4 +43,7 @@ export const GameVideoViewsText = styled.p`
   color: #64748b;
   font-family: 'Roboto';
   margin-top: 3px;
+  @media screen and (max-width: 576px) {
+    font-size: 68%;
+  }
 `

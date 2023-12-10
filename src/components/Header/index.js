@@ -6,6 +6,8 @@ import PopupLogout from '../PopupDesignFiles'
 
 import ThemeContext from '../../context/ThemeContext'
 
+import MenuItems from '../MenuItems'
+
 import {
   NxtWatchHeader,
   WebsiteLogo,
@@ -16,12 +18,20 @@ import {
   ThemeLogo2,
   LogoutButton,
   StyledPopout,
+  IconsToggleButton,
+  LogoutIcon,
+  LogoutButtonIcon,
+  NavContainer,
+  HamburgerIcon,
+  Menu,
+  CloseIconButton,
+  CloseIcon,
 } from './styledComponents'
 
 const Header = props => (
   <ThemeContext.Consumer>
     {value => {
-      const {lightTheme, onChangeTheme} = value
+      const {lightTheme, onChangeTheme, isMenuOpen, handleToggle} = value
       const theme = lightTheme
 
       const {history} = props
@@ -51,8 +61,38 @@ const Header = props => (
               alt="profile"
             />
 
+            <NavContainer>
+              <HamburgerIcon onClick={handleToggle}>
+                <IconsToggleButton lightTheme={lightTheme} />
+              </HamburgerIcon>
+              <Menu open={isMenuOpen} lightTheme={lightTheme}>
+                <CloseIconButton>
+                  <CloseIcon onClick={handleToggle} lightTheme={lightTheme} />
+                </CloseIconButton>
+                <MenuItems />
+              </Menu>
+            </NavContainer>
+
             <StyledPopout
               trigger={<LogoutButton lightTheme={theme}>Logout</LogoutButton>}
+              modal
+              closeOnDocumentClick
+            >
+              {close => (
+                <PopupLogout
+                  close={close}
+                  onClickLogout={onClickLogout}
+                  lightTheme={lightTheme}
+                />
+              )}
+            </StyledPopout>
+
+            <StyledPopout
+              trigger={
+                <LogoutButtonIcon>
+                  <LogoutIcon lightTheme={lightTheme} />
+                </LogoutButtonIcon>
+              }
               modal
               closeOnDocumentClick
             >

@@ -20,7 +20,12 @@ import {
 } from './styledComponents'
 
 class LoginRoute extends Component {
-  state = {username: '', password: '', checkbox: false, errorMessage: ''}
+  state = {
+    username: 'NithinSai2505',
+    password: 'rahul@2021',
+    checkbox: false,
+    errorMessage: '',
+  }
 
   successfulLogin = jwtToken => {
     const {history} = this.props
@@ -34,7 +39,8 @@ class LoginRoute extends Component {
 
   loginClicked = async event => {
     event.preventDefault()
-    const {username, password} = this.state
+    const {password} = this.state
+    const username = 'rahul'
     const userDetails = {username, password}
 
     const loginApiUrl = 'https://apis.ccbp.in/login'

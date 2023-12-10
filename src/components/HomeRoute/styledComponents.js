@@ -1,15 +1,5 @@
 import styled from 'styled-components'
 
-import {Link} from 'react-router-dom'
-
-import {AiFillHome} from 'react-icons/ai'
-
-import {HiFire} from 'react-icons/hi'
-
-import {SiYoutubegaming} from 'react-icons/si'
-
-import {CgPlayListAdd} from 'react-icons/cg'
-
 import {IoIosSearch} from 'react-icons/io'
 
 import {MdClose} from 'react-icons/md'
@@ -29,6 +19,9 @@ export const HomeSection = styled.div`
   align-items: center;
   padding-right: 30px;
   margin-top: 20px;
+  @media screen and (max-width: 576px) {
+    padding-right: 10px;
+  }
 `
 export const HomeLeftSection = styled.div`
   width: 18vw;
@@ -38,115 +31,30 @@ export const HomeLeftSection = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin-top: 35px;
+  @media screen and (max-width: 576px) {
+    display: none;
+    width: 0px;
+  }
+
+  @media screen and (min-width: 577px) and (max-width: 992px) {
+    width: 30vw;
+  }
 `
-export const HomeRightSection = styled(HomeLeftSection)`
+export const HomeRightSection = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
   width: 82vw;
   height: 100vh;
   margin-top: 0px;
   overflow-y: auto;
-`
-export const NavItemUl = styled.ul`
-  list-style-type: none;
-  padding-left: 0px;
-  display: flex;
-  flex-direction: column;
-`
-
-export const NavItemList = styled.li`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`
-
-export const HomeLink = styled(Link)`
-  text-decoration-line: none;
-  background-color: ${props => (props.lightTheme ? '#f1f5f9' : '#313131')};
-  border-width: 0px;
-  width: 18vw;
-  padding-left: 30px;
-`
-export const TrendingLink = styled(HomeLink)`
-  background-color: transparent;
-`
-export const GamingLink = styled(HomeLink)`
-  background-color: transparent;
-`
-export const SavedLink = styled(HomeLink)`
-  background-color: transparent;
-`
-
-export const HomeIcon = styled(AiFillHome)`
-  width: 21px;
-  height: 21px;
-  color: #ff0b37;
-  margin-right: 25px;
-`
-export const TrendingIcon = styled(HiFire)`
-  width: 21px;
-  height: 21px;
-  color: #7e858e;
-  margin-right: 25px;
-`
-export const GamingIcon = styled(SiYoutubegaming)`
-  width: 21px;
-  height: 21px;
-  color: #7e858e;
-  margin-right: 25px;
-`
-export const SavedIcon = styled(CgPlayListAdd)`
-  width: 21px;
-  height: 21px;
-  color: #7e858e;
-  margin-right: 25px;
-`
-
-export const HomeTitle = styled.p`
-  color: ${props => (props.lightTheme ? '#0f0f0f' : '#ffffff')};
-  font-size: 16px;
-  font-weight: 600;
-  font-family: 'Roboto';
-`
-export const TrendingTitle = styled(HomeTitle)`
-  font-weight: 400;
-`
-export const GamingTitle = styled(HomeTitle)`
-  font-weight: 400;
-`
-export const SavedTitle = styled(HomeTitle)`
-  font-weight: 400;
-`
-export const ContactUsSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 20px;
-`
-export const ContactUsTitle = styled.p`
-  color: ${props => (props.lightTheme ? '#424242' : '#ffffff')};
-  font-size: 18px;
-  font-weight: 500;
-  font-family: 'Roboto';
-`
-export const SocialMediaLogos = styled.div`
-  width: 60%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
-`
-export const SocialMediaLogo = styled.img`
-  width: 35px;
-  height: 35px;
-`
-export const ContactUsPara = styled.p`
-  width: 80%;
-  color: ${props => (props.lightTheme ? '#424242' : '#ffffff')};
-  font-size: 17px;
-  font-weight: 500;
-  font-family: 'Roboto';
-  line-height: 1.5;
+  @media screen and (max-width: 576px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    width: 70vw;
+  }
 `
 
 export const HomeBannerSection = styled.div`
@@ -158,10 +66,14 @@ export const HomeBannerSection = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-left: 20px;
+  padding-left: 25px;
   padding-top: 30px;
   padding-bottom: 20px;
-  padding-right: 20px;
+  padding-right: 25px;
+  @media screen and (max-width: 576px) {
+    height: 35%;
+    max-height: 29vh;
+  }
 `
 export const BannerTopSection = styled.div`
   width: 100%;
@@ -182,6 +94,12 @@ export const CloseButton = styled.button`
 
 export const BannerWebsiteLogo = styled.img`
   width: 12%;
+  @media screen and (max-width: 576px) {
+    width: 24%;
+  }
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    width: 35%;
+  }
 `
 
 export const BannerText = styled.p`
@@ -191,6 +109,14 @@ export const BannerText = styled.p`
   font-weight: 500;
   font-family: 'Roboto';
   line-height: 1.6;
+  @media screen and (max-width: 576px) {
+    width: 65%;
+    font-size: 18px;
+  }
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    width: 75%;
+    font-size: 18px;
+  }
 `
 export const GetItNowButton = styled.button`
   background-color: transparent;
@@ -203,12 +129,15 @@ export const GetItNowButton = styled.button`
   padding-right: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
+  @media screen and (max-width: 576px) {
+    font-size: 14px;
+  }
 `
 
 export const NxtWatchSection = styled.div`
   background-color: ${props => (props.lightTheme ? '#f4f4f4' : '#000000')};
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   margin-top: 10px;
 `
 
@@ -216,8 +145,13 @@ export const SearchContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: relative;
   width: 40%;
+  @media screen and (max-width: 576px) {
+    width: 85%;
+  }
+  @media screen and (min-width: 577px) and (max-width: 768px) {
+    width: 85%;
+  }
 `
 
 export const SearchInput = styled.input`
@@ -241,7 +175,6 @@ export const SearchLogoBox = styled.button`
   border: 1px ${props => (props.lightTheme ? '#cbd5e1' : '#424242')} solid;
   padding-left: 10px;
   padding-right: 10px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,7 +188,7 @@ export const SearchLogo = styled(IoIosSearch)`
 `
 export const VideosUl = styled.ul`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   padding-left: 0px;
   list-style-type: none;

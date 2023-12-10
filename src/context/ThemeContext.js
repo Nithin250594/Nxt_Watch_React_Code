@@ -6,6 +6,10 @@ const ThemeContext = React.createContext({
   savedVideosList: [],
   onSaveVideo: () => {},
   videoSaved: false,
+  handleToggle: () => {},
+  isMenuOpen: false,
+  activeMenuItem: 'HOME',
+  setActiveMenuItem: () => {},
 })
 
 export default ThemeContext

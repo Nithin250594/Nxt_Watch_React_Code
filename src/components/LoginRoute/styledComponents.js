@@ -12,15 +12,22 @@ export const LoginForm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
   background-color: ${props => (props.lightTheme ? '#ffffff' : '#000000')};
-  width: 30vw;
   border-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 40px;
   padding-bottom: 40px;
+  @media screen and (max-width: 576px) {
+    width: 77%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 769px) {
+    width: 45%;
+  }
 `
 
 export const WebsiteLogo = styled.img`
@@ -75,6 +82,8 @@ export const LoginButton = styled.button`
   padding-bottom: 12px;
   width: 100%;
   margin-top: 30px;
+  cursor: pointer;
+  outline: none;
 `
 export const ErrorMessage = styled.p`
   color: #ff0000;

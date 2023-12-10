@@ -4,8 +4,15 @@ import {Link} from 'react-router-dom'
 
 export const EachVideoItem = styled.li`
   width: 30%;
-  margin-right: 35px;
   margin-bottom: 55px;
+  @media screen and (max-width: 576px) {
+    width: 48%;
+    margin-bottom: 7%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 48%;
+    margin-bottom: 7%;
+  }
 `
 
 export const EachLink = styled(Link)`
@@ -41,6 +48,12 @@ export const VideoTitle = styled.p`
   font-family: 'Roboto';
   line-height: 1.5;
   margin-bottom: 5px;
+  @media screen and (max-width: 576px) {
+    font-size: 60%;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 65%;
+  }
 `
 export const VideoChannelName = styled(VideoTitle)`
   color: #64748b;
@@ -49,16 +62,28 @@ export const VideoChannelName = styled(VideoTitle)`
 `
 
 export const VideoViewsAndPublished = styled.div`
-  width: 70%;
+  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 0px;
+  @media screen and (max-width: 420px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 export const SpanDot = styled.span`
   color: #64748b;
   font-weight: 800;
   font-size: 18px;
+  @media screen and (max-width: 576px) {
+    font-size: 80%;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 80%;
+  }
 `
 export const VideoViewsPublishedText = styled(VideoTitle)`
   color: #64748b;
