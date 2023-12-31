@@ -88,6 +88,7 @@ class HomeRoute extends Component {
       method: 'GET',
     }
 
+    try{
     const response = await fetch(homeVideosApiUrl, options)
 
     if (response.ok === true) {
@@ -111,6 +112,10 @@ class HomeRoute extends Component {
     } else {
       this.setState({resultView: outputStatus.failure})
     }
+    }
+    catch(error){
+      console.error('Error during API Call :', error)
+      this.setState({resultView: outputStatus.failure})
   }
 
   retryButton = () => this.getVideosSection()
