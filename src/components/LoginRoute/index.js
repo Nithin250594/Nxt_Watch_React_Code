@@ -48,7 +48,7 @@ class LoginRoute extends Component {
       method: 'POST',
       body: JSON.stringify(userDetails),
     }
-
+  try{
     const response = await fetch(loginApiUrl, options)
     const data = await response.json()
 
@@ -57,6 +57,10 @@ class LoginRoute extends Component {
       this.successfulLogin(jwtToken)
     } else {
       this.loginFailure(data)
+    }
+  } catch(error){
+      console.error("Login Error:" error)
+       this.loginFailure(data)
     }
   }
 
