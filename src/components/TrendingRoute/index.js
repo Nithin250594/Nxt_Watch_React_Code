@@ -60,6 +60,8 @@ class TrendingRoute extends Component {
       },
       method: 'GET',
     }
+    
+    try{
     const response = await fetch(trendingVideosApiUrl, options)
 
     if (response.ok === true) {
@@ -83,6 +85,10 @@ class TrendingRoute extends Component {
       })
     } else {
       this.setState({resultView: outputStatus.failure})
+    }
+  } catch (error){
+    console.error('Error during trending details API call:', error)
+    this.setState({resultView: outputStatus.failure})
     }
   }
 
