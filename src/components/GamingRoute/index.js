@@ -59,6 +59,8 @@ class GamingRoute extends Component {
       },
       method: 'GET',
     }
+
+    try{
     const response = await fetch(gamingVideosApiUrl, options)
 
     if (response.ok === true) {
@@ -75,6 +77,10 @@ class GamingRoute extends Component {
         resultView: outputStatus.success,
       })
     } else {
+      this.setState({resultView: outputStatus.failure})
+    }
+    } catch(error){
+      console.error('Error during Gaming Details API Call:', error)
       this.setState({resultView: outputStatus.failure})
     }
   }
